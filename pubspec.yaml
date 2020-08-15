@@ -17,6 +17,9 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  get_it: ^4.0.1
+  http: ^0.12.2
+  rxdart: ^0.24.1
   flutter:
     sdk: flutter
 
