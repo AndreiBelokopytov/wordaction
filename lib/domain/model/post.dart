@@ -1,4 +1,5 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:wordaction/domain/model/category.dart';
 
 @immutable
 class Post {
@@ -6,6 +7,12 @@ class Post {
   final String title;
   final String content;
   final String featuredMedia;
+  final List<Category> catetories;
 
-  Post({@required this.id, @required this.title, @required this.content, @required this.featuredMedia});
+  Post(
+      {@required this.id,
+      @required this.title,
+      @required this.content,
+      @required this.featuredMedia,
+      @required this.catetories});
 }

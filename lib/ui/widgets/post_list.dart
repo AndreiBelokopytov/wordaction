@@ -17,9 +17,8 @@ class PostList extends StatefulWidget {
 class _PostListState extends State<PostList> {
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
+    return ListView.builder(
       itemBuilder: (_, index) => PostListItem(post: widget.posts[index]),
-      separatorBuilder: (_, index) => const Divider(),
       itemCount: widget.posts.length,
     );
   }

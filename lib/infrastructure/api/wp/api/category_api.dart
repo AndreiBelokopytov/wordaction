@@ -6,7 +6,7 @@ class CategoryApi extends WPApiBase {
   CategoryApi(HttpClientBase http): super(http);
 
   Future<Category> getById(int id) async {
-    var data = await http.get(path: '${WPApiBase.apiPath}/category/$id');
+    var data = await http.get(path: '${WPApiBase.apiPath}/categories/$id');
     return Category.fromJSON(data);
   }
 }
