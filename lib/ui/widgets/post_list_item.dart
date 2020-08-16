@@ -18,14 +18,21 @@ class PostListItem extends StatelessWidget {
           CachedNetworkImage(
               imageUrl: post.featuredMedia, fit: BoxFit.cover, height: 220),
           ListTile(
-            contentPadding: EdgeInsets.all(8.0),
-            title: Text(post.title, style: Theme.of(context).textTheme.title),
-            subtitle: Padding(
-              padding: EdgeInsets.symmetric(vertical: 8),
-              child: Text(
-                "Опубликовано в: ${post.catetories.map((category) => category.name).join(',')}"),
-            )
-          )
+              leading: Padding(
+                padding: EdgeInsets.only(right: 8),
+                child: CachedNetworkImage(
+                  imageUrl: post.politician.avatar48,
+                  width: 48,
+                  height: 48,
+                ),
+              ),
+              contentPadding: EdgeInsets.all(8.0),
+              title: Text(post.title, style: Theme.of(context).textTheme.title),
+              subtitle: Padding(
+                padding: EdgeInsets.symmetric(vertical: 12),
+                child: Text(
+                    "Опубликовано в: ${post.catetories.map((category) => category.name).join(',')}"),
+              ))
         ],
       )),
     );

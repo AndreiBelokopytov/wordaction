@@ -27,12 +27,10 @@ class RecentPostsBloc extends BlocBase {
     pagination$.stream.switchMap((pagination) async* {
       if (_currentState != null) {
         yield _currentState.copyWith(isLoading: true);
-      } else {
-        yield RecentPostsState(
-            posts: [], pagination: pagination, isLoading: true);
       }
       var posts = await _postRepository.getRecent(pagination);
-      yield _currentState.copyWith(isLoading: false, posts: posts);
+      yield RecentPostsState(
+          isLoading: false, posts: posts, pagination: pagination);
     }).listen((state) => _state$.add(state));
     pagination$.add(Pagination());
   }

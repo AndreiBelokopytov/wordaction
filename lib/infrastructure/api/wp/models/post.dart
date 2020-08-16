@@ -8,6 +8,7 @@ class Post {
   final String link;
   final RenderedContent title;
   final RenderedContent content;
+  final int author;
   final int featuredMedia;
   final List<int> categories;
 
@@ -17,6 +18,7 @@ class Post {
         link = rawData['link'],
         title = RenderedContent.fromJSON(rawData['title']),
         content = RenderedContent.fromJSON(rawData['content']),
+        author = rawData['author'],
         featuredMedia = rawData['featured_media'],
         categories = (rawData['categories'] as List<dynamic>).map((id) => id as int).toList();
 }
